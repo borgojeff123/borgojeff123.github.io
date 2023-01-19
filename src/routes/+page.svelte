@@ -99,7 +99,7 @@
   .shop {
     display: grid;
     grid-auto-flow: row; /* default */
-    gap: 8px;
+    gap: 150px;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
   }
@@ -168,9 +168,11 @@
 
   .worker {
     width: 100%;
-    height: 100%;
+    height: 700%;
     border: 1px solid rgb(87, 54, 141);
     background-color: rgb(155, 155, 155);
+    background-image: url("https://www.greatoutdoorssuperstore.co.uk/blog/wp-content/uploads/2013/09/Its-a-Cow-1024x682.jpg");
+    background-size:cover;
     place-items: center;
     place-content: center;
     display: flex;

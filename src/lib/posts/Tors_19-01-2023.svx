@@ -1,0 +1,7 @@
+---
+title: "torsdag eftermiddag"
+date: "2023-01-19"
+---
+
+<h1>Hejsan!</h1>
+Idag har jag gjort mina workers ikoner till kor och jag har även flyttat isär de. Jag gjorde det eftersom jag kände att det kändes plain att detbara stod Chicken och Cow. Jag gjorde det genom att lägga till en "background-image" under workers articleni koden. Sedan gjorde jag en "background-size" och anände ontain så hela biden var med. Sedan under shop så ändrade jag "gap" från 8px till 150px så bilderna inte skulle ligga på varandra.
