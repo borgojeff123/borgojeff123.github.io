@@ -6,13 +6,34 @@
 
   let upgrades = [
     { cost: 15, name: "Doubler", multiplier: 2, worker: 0 },
-    { cost: 5, name: "Worker", multiplier: 0, worker: 1 },
+    { cost: 5, name: "Chicken", multiplier: 0, worker: 1 },
+    { cost: 60, name: "Cow", multiplier: 0, worker: 10 },
   ];
+
+  
+
 
   function increment() {
     clicks = clicks + multiplier;
     console.log("click" + clicks);
   }
+  function nFormatter(num, digits) {
+  const lookup = [
+    { value: 1, symbol: "" },
+    { value: 1e3, symbol: "k" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e9, symbol: "G" },
+    { value: 1e12, symbol: "T" },
+    { value: 1e15, symbol: "P" },
+    { value: 1e18, symbol: "E" }
+  ];
+  const rx = /.0+$|(.[0-9]*[1-9])0+$/;
+  var item = lookup.slice().reverse().find(function(item) {
+    return num >= item.value;
+  });
+  return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
+}
+
 </script>
 
 <article>
@@ -47,14 +68,14 @@
   </header>
   <div class="game">
     <button on:click={increment} class="clicker">
-      <span class="clicks">{clicks}</span>
-      <span class="pointtext">PPC: {multiplier}</span>
+      <span class="clicks">{nFormatter(clicks,3)}</span>
+      <span class="pointtext">cpc: {nFormatter(multiplier)}</span>
     </button>
   </div>
   <footer>
     <div class="panelright">
       <div>
-        <span>Workers</span>
+        <span>Barn</span>
         <hr />
         <div class="shop">
           {#each workers as worker}
@@ -67,7 +88,14 @@
   </footer>
 </article>
 
+
+<main class="container_fluid">
+  <body bgcolor="#371894"
+  ></body>
+</main>
+
 <style>
+
   .shop {
     display: grid;
     grid-auto-flow: row; /* default */
@@ -75,30 +103,82 @@
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
   }
+  :global(html) {
+    background-color: orange;
+    font-weight: bold;
+  }
+  :global(main) {
+    background-color: orange;
+    font-weight: bold;
+  }
+  :global(article) {
+    background-color: orange;
+    font-weight: bold;
+  }
+  :global(nav) {
+    background-color: orange;
+
+
+  }
+
+  :global(a) {
+    color:rgb(255, 255, 255)
+
+
+  }
+  header {
+    background-color: orange;
+
+  }
+  span {
+    color:rgb(255, 255, 255)
+
+  }
+  :global(body) {
+    background-color: orange
+
+
+  }
+  footer {
+    background-color: orange;
+
+
+
+  }
+ article{
+  background-color: orange;
+
+  }
 
   .upgrade {
     width: 100%;
     height: 100%;
-    border: 4px solid rgb(219, 16, 16);
-    background-color: rgb(59, 183, 28);
+    border: 4px solid rgb(0, 0, 0);
+    background-color: rgb(1, 1, 1);
     background-size: cover;
-    background-image: url("data:image/jpeg;base64,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");
+    background-image: url("https://freebeacon.com/wp-content/uploads/2020/12/Screen-Shot-2020-12-17-at-9.18.28-AM-736x411.png");
     place-items: center;
     place-content: center;
     display: flex;
     flex-direction: column;
   }
 
+  
+
+
   .worker {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
-    background-color: rgb(128, 141, 27);
+    border: 1px solid rgb(87, 54, 141);
+    background-color: rgb(155, 155, 155);
     place-items: center;
     place-content: center;
     display: flex;
   }
+  :global(nav){
+    background-color: orange
 
+  }
   .game {
     height: 50vh;
     display: flex;
@@ -114,9 +194,9 @@
     flex-direction: column;
     place-items: center;
     place-content: center;
-    background-image: url("https://assets.bonappetit.com/photos/5ca534485e96521ff23b382b/4:3/w_3600,h_2700,c_limit/chocolate-chip-cookie.jpg");
+    background-image: url("https://news.uchicago.edu/sites/default/files/styles/explainer_hero/public/images/2022-10/sgr%20A%2A%20ESO%20and%20M.%20Kornmesser%20690.jpg?h=06d036b4&itok=Lr5t57tH");
     background-size: cover;
-    background-position: 0px -100px;
+    background-position: 0px -169px;
   }
 
   .panelright {
@@ -131,7 +211,7 @@
   }
 
   .pointtext {
-    color: brown;
+    color: rgb(19, 33, 165);
     font-size: 25px;
     font-weight: bold;
   }

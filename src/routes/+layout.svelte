@@ -23,6 +23,7 @@
 <main class="container-fluid">
   <hr />
 
+
   <main class="container">
     <slot />
   </main>

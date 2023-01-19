@@ -1,0 +1,8 @@
+---
+title: "Torsdag eftermiddag"
+date:  "2023-01-12"
+---
+
+<h1>Vad jag har gjort</h1>
+
+Jag har tagit mig in på min hemsidan och hittat var allt finns på visualstudio. Jag har lärt mig hur det mesta fungerar och även börjat experimentera men inte kommit till nåt vidare lyckat.

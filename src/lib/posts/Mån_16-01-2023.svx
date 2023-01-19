@@ -1,0 +1,15 @@
+---
+title: "Måndag eftermiddag"
+date: "2023-01-16"
+---
+
+<h1>Ändringar</h1>
+
+Jag har gjort några ändringar till utseendet på min hemsidan. Några av dessa är:
+
+Bilderna på workers och multiplier
+
+Lagt till en annan sorts worker som heter cow som kostar 60 och producerar
+
+Ändrat hur min clicker ser ut
+

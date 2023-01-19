@@ -1,0 +1,22 @@
+---
+title: "Tisdag både för och eftermiddag"
+date: "2023-01-17"
+---
+
+
+<h1>Vad jag har gjort</h1>
+
+Denna lektion har jag gjort några större ändringar. Jag ändrade hela min hemisda till svart och jag gjorde även så att istället för att de tstår 1000 så står det 1k och istället för 1000000 så står det 1m osv. 
+
+
+<script>
+ let a = 0;
+</script>
+
+
+
+<h1>{a}</h1>
+<button on:click={()=>{a = a + 1}}>like</button>
+<button on:click={()=>{a = a - 1}}>Disklike</button>
+
+
